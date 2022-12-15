@@ -2,7 +2,7 @@
   "name": "myesportapp.service",
   "version": "1.0.0",
   "description": "Backend special for myESportApp",
-  "main": "dist/index.js",
+  "main": "dist/server.js",
   "scripts": {
     "build": "tsc",
     "prestart": "npm run build",

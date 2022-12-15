@@ -1,13 +1,19 @@
-import express from 'express';
-import dotenv from 'dotenv';
+import { Application, urlencoded, json } from 'express';
 
-dotenv.config();
+import Routes from './routes';
 
-const app = express();
-const port = process.env.PORT;
+export default class Server {
+   constructor(app: Application) {
+      this.config(app);
+      new Routes(app);
+   }
 
-app.get('/', (req, res) => {
-    res.send('Hello world!');
+   public config(app: Application): void {
+      app.use(urlencoded({ extended: true }));
+      app.use(json());
+   }
+}
+
+process.on('beforeExit', function (err) {
+   console.error(err);
 });
-
-app.listen(port, () => console.log(`Running on port ${port}`));
