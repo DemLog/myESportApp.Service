@@ -1,4 +1,4 @@
-import { Application } from 'express';
+import {Application} from 'express';
 import userRouter from './UserRouter';
 
 export default class Routes {

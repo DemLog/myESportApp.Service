@@ -1,7 +1,9 @@
 import * as dotenv from 'dotenv';
+
 dotenv.config();
+
 import express from 'express';
-import { Application } from 'express';
+import {Application} from 'express';
 
 import Server from './src/index';
 
